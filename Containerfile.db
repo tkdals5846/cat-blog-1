@@ -1,0 +1,9 @@
+FROM docker.io/library/postgres:9.2.19
+
+MAINTAINER "CHOI GOOKHYUN<tang@dustbox.kr>"
+
+ENV POSTGRES_PASSWORD blog
+ENV POSTGRES_USER blog
+ENV POSTGRES_DB blog
+
+ADD docker/create_tables.sql /docker-entrypoint-initdb.d/
