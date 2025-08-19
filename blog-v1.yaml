@@ -21,15 +21,5 @@ spec:
     ports:
     - containerPort: 8080
       hostPort: 80
-    volumeMounts:
-    - mountPath: /var/lib/postgresql/data
-      name: blog-pgdata-pvc
   - image: quay.io/xinick/blog:web-v1
     name: web
-    volumeMounts:
-    - mountPath: /var/lib/postgresql/data
-      name: blog-pgdata-pvc
-  volumes:
-  - name: blog-pgdata-pvc
-    persistentVolumeClaim:
-      claimName: blog-pgdata
